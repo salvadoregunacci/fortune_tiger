@@ -1,0 +1,44 @@
+:root {
+  // main sizes (margin, padding):
+  --size-1: 8px;
+  --size-2: 16px;
+  --size-3: 24px;
+  --size-4: 48px;
+
+  // height:
+  --header-h: 82px;
+
+  // width:
+  --container-header-w: 1390px;
+  --container-w: 1250px;
+
+  // border-radius ranges:
+  --rounded-sm: 8px;
+  --rounded-md: 12px;
+  --rounded-lg: 24px;
+  --rounded-xxl: 48px;
+
+  // shadows:
+  --shadow-1: 0px 4px 8px 0px rgba(69, 195, 104, 0.30);
+  --shadow-2: 0px 4px 8px 0px rgba(254, 181, 44, 0.30);
+  --shadow-active-1: 0px 4px 24px 0px rgba(69, 195, 104, 0.30);
+  --shadow-active-2: 0px 4px 24px 0px rgba(254, 181, 44, 0.30);
+
+  // colors ui elements:
+  --color-ui-1: linear-gradient(180deg, #59D069 0%, #23902F 100%);
+  --color-ui-2: linear-gradient(180deg, #FCF45F 0%, #FEAD25 100%);
+  --active-el: rgb(248, 190, 0);
+
+  // main colors:
+  --light: #fff;
+  --light-100: #F6F7F8;
+  --light-200: #DADADD;
+  --light-300: #878C9A;
+
+  --dark: #000;
+  --dark-100: #2C2E33;
+  --dark-200: #3A3A3A;
+  --dark-300: #303238;
+
+  --danger: #F34D58;
+}
