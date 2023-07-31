@@ -1,0 +1,26 @@
+@media (max-width: 1400px) {
+  .lightbox .lightbox__zoom_content .lightbox__zoom_img {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .lightbox .lightbox__zoom_content .lightbox__zoom_img {
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 490px) {
+  .lightbox .lightbox__zoom_close {
+    right: 20px;
+    top: 22%;
+  }
+
+  .lightbox .lightbox__zoom_close::after, .lightbox .lightbox__zoom_close::before {
+    background: red;
+
+    &:hover {
+      background: red;
+    }
+  }
+}

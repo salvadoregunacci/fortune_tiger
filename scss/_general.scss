@@ -1,0 +1,266 @@
+// Variables =======
+
+@import "animations";
+
+/* Video ===============*/
+
+.video__poster {
+  display: inline-flex;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 12px;
+
+  .video__poster_play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 2;
+    background: none;
+    border: none;
+
+    &:focus, &:active {
+      border: none;
+      outline: none;
+
+      path {
+        stroke-width: 3px;
+        stroke: rgb(133, 219, 3);
+      }
+    }
+
+    path {
+      transition: .3s;
+    }
+
+    @media (hover) {
+      &:hover path {
+        fill: rgb(139, 241, 139);
+      }
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .4);
+    z-index: 1;
+  }
+}
+
+.video__poster[data-size="sm"] {
+  img {
+    max-width: 320px;
+    width: 100%;
+  }
+}
+
+.video__poster[data-size="md"] {
+  img {
+    max-width: 520px;
+    width: 100%;
+  }
+}
+
+.video__poster[data-size="lg"] {
+  img {
+    max-width: 720px;
+    width: 100%;
+  }
+}
+
+#video_player {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: .4s;
+  z-index: 100;
+
+  &::after {
+    content: "╳";
+    font-size: 24px;
+    position: absolute;
+    right: 5%;
+    top: 8%;
+    color: rgb(255, 36, 36);
+    cursor: pointer;
+  }
+}
+
+#video_player.active {
+  opacity: 1;
+  pointer-events: auto;
+
+  &:first-child {
+    animation: fadeFromTop .4s forwards;
+  }
+}
+
+/* Lightbox ===============*/
+
+.lightbox {
+  max-width: 590px;
+
+  .lightbox__full {
+    object-fit: contain;
+    cursor: pointer;
+    max-height: 350px;
+    overflow: hidden;
+    border-radius: 14px;
+
+    img {
+      width: 100%;
+      border-radius: 14px;
+    }
+  }
+
+  .lightbox__thumbnails {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    column-gap: 10px;
+  }
+
+  .lightbox__thumb {
+    width: 100%;
+    overflow: hidden;
+    object-fit: contain;
+    position: relative;
+    cursor: pointer;
+    max-height: 120px;
+    min-height: 50px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: inline-block;
+      background: rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      transition: .3s;
+    }
+
+    @media (hover) {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 34px;
+        height: 34px;
+        display: inline-block;
+        background: url("../img/ui/search.svg") 0 0 / 100% no-repeat;
+        filter: invert(100%);
+        display: none;
+      }
+    }
+
+    &:hover::before {
+      opacity: 1;
+    }
+
+    &:hover::after {
+      display: inline-block;
+    }
+  }
+
+  .lightbox__zoom {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .lightbox__zoom[active] {
+    opacity: 1;
+    pointer-events: auto;
+
+    .lightbox__zoom_content {
+      animation: fadeFromTop .4s forwards;
+    }
+  }
+
+  .lightbox__zoom_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+
+    .lightbox__zoom_img {
+      max-width: 1200px;
+
+      img {
+        width: 100%;
+        border-radius: 14px;
+      }
+    }
+  }
+
+  .lightbox__zoom_close {
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    cursor: pointer;
+
+    &:hover {
+
+      &::after,
+      &::before {
+        background: rgb(255, 32, 32);
+      }
+    }
+
+    &::after,
+    &::before {
+      content: "";
+      background: #ff6767;
+      display: inline-block;
+      position: absolute;
+      transition: .3s;
+      height: 2px;
+      width: 100%;
+      top: 50%;
+      left: 0;
+    }
+
+    &::after {
+      transform: rotate(45deg);
+    }
+
+    &::before {
+      transform: rotate(-45deg);
+    }
+  }
+}
