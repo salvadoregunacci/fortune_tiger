@@ -30,6 +30,7 @@
 
     <!-- STYLES -->
     <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="./css/normalize.min.css">
     <link rel="stylesheet" href="./css/style.min.css">
 
     <title>Fortune Tiger | Обзор слота</title>
@@ -49,8 +50,201 @@
 </head>
 
 <body>
-    
+    <header id="header">
+        <div class="container">
+            <button class="header__burger" aria-label="Открыть меню">
+                <span></span>
+            </button>
+
+            <a href="/" class="logo">
+                <img src="./img/logo.webp" alt="fortune tiger logotype">
+            </a>
+
+            <div class="navigation__menu">
+                <nav class="navigation">
+                    <ul class="navigation__wrap">
+                        <li>
+                            <div class="dropdown">
+                                <button class="dropdown__header" aria-label="Развернуть список">
+                                    <span class="dropdown__title">Казино</span>
+                                    <img src="./img/icons/ui/chevron.svg" alt="chevron" class="dropdown__handler">
+                                </button>
+
+                                <ul class="dropdown__content">
+                                    <li>
+                                        <a href="#">Ссылка 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Ссылка 2222</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Ссылка 33333333</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">Бонусы</a>
+                        </li>
+                        <li>
+                            <a href="#">Игры</a>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <button class="dropdown__header" aria-label="Развернуть список">
+                                    <span class="dropdown__title">Покер</span>
+                                    <img src="./img/icons/ui/chevron.svg" alt="chevron" class="dropdown__handler">
+                                </button>
+
+                                <ul class="dropdown__content">
+                                    <li>
+                                        <a href="#">Ссылка 4444444444</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Ссылка 555555</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Ссылка 66666666666666</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">Рулетка</a>
+                        </li>
+                        <li>
+                            <a href="#">Слоты</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="navigation__controls">
+                    <button class="search__trigger" title="Поиск" aria-label="Открыть поиск">
+                        <img src="./img/icons/ui/search.svg" alt="search icon">
+                    </button>
+
+                    <button class="langs__trigger" title="Сменить язык" aria-label="Сменить язык">
+                        <div class="langs__trigger_flag">
+                            <img src="./img/icons/langs/ru.svg" alt="russian">
+                        </div>
+                        <span>ru</span>
+                        <img src="./img/icons/ui/chevron.svg" alt="chevron icon" class="langs__trigger_handler">
+                    </button>
+
+                    <a href="#">
+                        <button class="btn btn_1" aria-label="Играть в Tiger Fortune">
+                            <span>Играть Tiger Fortune</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ====================== -->
+    <main>
+        <div class="container">
+
+        </div>
+    </main>
+    <!-- ====================== -->
+
+    <!-- MODALS -->
+
+    <div class="cookies">
+        <div class="container">
+            <div class="cookies__row">
+                <img src="./img/icons/cookie.svg" alt="cookie">
+
+                <div class="cookies__wrap">
+                    <h4>Этот веб-сайт использует файлы cookie.</h4>
+                    <p>
+                        Продолжая, вы даете нам разрешение на размещение файлов cookie в соответствии с нашей
+                        <a href="#">Политикой использования файлов cookie.</a>
+                    </p>
+                </div>
+            </div>
+
+            <button class="cookies__close_btn btn btn_2" aria-label="Принять cookie">
+                <span>Принять и закрыть</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="langs__modal">
+        <div class="langs__content">
+            <button class="langs__close_btn" aria-label="Закрыть окно">
+                <svg viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.63699 28.3636L28.3643 1.63635" stroke="white" stroke-width="2.86364"
+                        stroke-linecap="round" />
+                    <path d="M1.63699 1.63636L28.3643 28.3636" stroke="white" stroke-width="2.86364"
+                        stroke-linecap="round" />
+                </svg>
+            </button>
+
+            <h3>Выбор языка</h3>
+
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="./img/icons/langs/gb.svg" alt="Great Britain flag">
+                        <span>English</span>
+                    </a>
+                </li>
+                <li class="selected">
+                    <a href="#">
+                        <img src="./img/icons/langs/ru.svg" alt="Russian Federation flag">
+                        <span>Русский</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./img/icons/langs/pt.svg" alt="Portugal flag">
+                        <span>Português</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./img/icons/langs/es.svg" alt="Spain flag">
+                        <span>Español</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./img/icons/langs/fr.svg" alt="France flag">
+                        <span>Français</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./img/icons/langs/de.svg" alt="Germany flag">
+                        <span>Deutsch</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="search__modal">
+        <button class="search__close_btn" aria-label="Закрыть окно">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.63699 28.3636L28.3643 1.63635" stroke="white" stroke-width="2.86364"
+                    stroke-linecap="round" />
+                <path d="M1.63699 1.63636L28.3643 28.3636" stroke="white" stroke-width="2.86364"
+                    stroke-linecap="round" />
+            </svg>
+        </button>
+
+        <div class="search__content">
+            <form class="search">
+                <input type="search" placeholder="Поиск по сайту" name="search"></input>
+                <button type="submit" aria-label="Искать">
+                    <img src="./img/icons/ui/search.svg" alt="search icon">
+                </button>
+            </form>
+        </div>
+    </div>
     <!-- ================================================ -->
+    <script src="./scripts/main.js"></script>
     <script src="./scripts/lightBox.js"></script>
     <script src="./scripts/videoPlayer.js"></script>
 </body>
