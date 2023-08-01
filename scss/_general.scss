@@ -37,6 +37,138 @@ p {
   color: var(--dark);
 }
 
+.table__responsive {
+  margin-top: var(--size-2);
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #F1F3F5;
+  border-radius: var(--rounded-md);
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th,
+    td {
+      width: 20%;
+      padding: 16px 0px;
+      text-align: left;
+    }
+
+    th {
+      color: var(--dark);
+      font-weight: 600;
+    }
+
+    td {
+      font-weight: 400;
+    }
+
+    thead {
+      background: var(--light-100);
+    }
+
+    tbody>tr>td:first-child {
+      padding-left: var(--size-3);
+      font-weight: 600;
+    }
+
+    tbody>tr>td:last-child {
+      padding-right: var(--size-3);
+    }
+
+    thead>tr>th:first-child {
+      padding-left: var(--size-3);
+    }
+
+    thead>tr>th:last-child {
+      padding-right: var(--size-3);
+    }
+  }
+}
+
+.row {
+  margin-top: 1.875rem;
+  display: flex;
+}
+
+.core_content {
+  h3 {
+    margin-top: 36px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 150%;
+  }
+}
+
+.specific {
+  h3 {
+    margin-top: 0;
+  }
+}
+
+.specific_row {
+  column-gap: 1.875rem;
+}
+
+.desc_nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2.25rem;
+  margin-bottom: 2.25rem;
+
+  p {
+    font-size: 13px;
+    font-style: italic;
+    line-height: normal;
+
+    a {
+      color: var(--danger);
+      text-decoration: underline;
+      transition: .3s;
+
+      &:hover {
+        color: var(--danger-h);
+      }
+    }
+  }
+
+  .desc_nav__wrap {
+    display: flex;
+    align-items: center;
+    column-gap: var(--size-2);
+  }
+
+  button {
+    width: 230px;
+  }
+}
+
+.list {
+  margin-top: var(--size-2);
+
+  li:not(:last-child) {
+    margin-bottom: 0.75rem;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+  }
+
+  li::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    background: var(--dark);
+    border-radius: 100%;
+    transform: translateY(-30%);
+    margin-right: 10px;
+  }
+}
+
 button {
   background: none;
   border: none;
@@ -1068,6 +1200,7 @@ ol:not(.section_nav__list) {
   }
 
   .lightbox__zoom {
+    z-index: 100;
     position: fixed;
     top: 0;
     left: 0;
