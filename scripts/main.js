@@ -112,6 +112,7 @@
     }
   }
 
+
   function closeLangsModal() {
     if ($langsModal) {
       $langsModal.classList.add("close");
