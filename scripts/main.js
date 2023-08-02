@@ -79,6 +79,8 @@
   });
 
   $closeSearchModal?.addEventListener("click", () => {
+    console.log("+++++");
+
     if ($searchModal) {
       $searchModal.classList.remove("active");
     }
