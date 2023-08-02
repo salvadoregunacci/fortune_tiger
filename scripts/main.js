@@ -7,6 +7,7 @@
 
   const $burgerBtn = document.querySelector('.header__burger');
   const $dropdowns = document.querySelectorAll('.dropdown');
+  const $toTopBtn = document.querySelector('.to_top_btn');
 
   const $searchTriggers = document.querySelectorAll('.search__trigger');
   const $searchModal = document.querySelector('.search__modal');
@@ -100,9 +101,20 @@
     if (e.code === "Escape") pressEscapeKey();
   });
 
+  $toTopBtn?.addEventListener("click", scrollToTop);
+
   // =========================
   // Functions
   // =========================
+
+  function scrollToTop() {
+    if (!window) return;
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
 
   function pressEscapeKey() {
     if ($searchModal && $searchModal.classList.contains("active")) {
