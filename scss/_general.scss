@@ -554,6 +554,7 @@ ol:not(.section_nav__list) {
   transform: translateY(100%);
   pointer-events: none;
   transition: .4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  z-index: 100;
 
   .container {
     display: flex;
@@ -563,6 +564,7 @@ ol:not(.section_nav__list) {
   }
 
   p {
+    font-weight: 400;
     font-size: 12px;
     max-width: 860px;
     color: var(--light);
@@ -574,14 +576,14 @@ ol:not(.section_nav__list) {
     }
   }
 
-  h4 {
+  .cookies__title {
     font-size: 14px;
     font-weight: 700;
   }
 }
 
 .cookies.active {
-  transform: translateY(-50%);
+  transform: translateY(-30%);
   pointer-events: auto;
 }
 

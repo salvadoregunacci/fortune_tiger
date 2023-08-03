@@ -47,7 +47,7 @@
       if (window && !window.localStorage.getItem("cookie") && $cookie && !$cookie.classList.contains("active")) {
         $cookie.classList.add("active");
       }
-    }, 2500);
+    }, 2000);
   });
 
   $closeCookieBtn?.addEventListener("click", () => {
