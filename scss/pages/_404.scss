@@ -8,6 +8,7 @@
   h1 {
     font-size: 7rem;
     font-weight: 600;
+    animation: rubberBand 1.2s forwards;
   }
 }
 
@@ -16,6 +17,8 @@
   flex-direction: column;
   align-items: center;
   row-gap: var(--size-3);
+  opacity: 0;
+  animation: fadeFromTop .4s forwards;
 }
 
 .not_found__subtitle {

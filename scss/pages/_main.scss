@@ -194,7 +194,7 @@
 .controls_col__buttons {
   margin-top: var(--size-2);
 
-  a {
+  a:not(.btn) {
     display: inline-block;
     width: 100%;
   }
@@ -203,7 +203,8 @@
     margin-top: var(--size-1);
   }
 
-  button {
+  .btn {
+    display: inline-flex;
     width: 100%;
   }
 }

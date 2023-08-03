@@ -24,9 +24,15 @@
   const $policyInputs = document.querySelectorAll('.form__policy_input');
   const $formsSubmit = document.querySelectorAll('.form');
 
+  let $titleSections = document.querySelectorAll('.title_section');
+
+
   // =========================
   // Events
   // =========================
+
+  window.addEventListener('scroll', addVisibleClassTitle);
+  window.addEventListener('load', addVisibleClassTitle);
 
   $formsSubmit?.forEach(item => {
     item.addEventListener("submit", onSubmitForm);
@@ -222,4 +228,17 @@
       }, 800);
     }
   }
+
+
+  function addVisibleClassTitle() {
+    $titleSections.forEach(section => {
+      const sectionTop = section.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      const threshold = windowHeight * 0.2;
+
+      if (sectionTop < windowHeight - threshold) {
+        section.classList.add('visible');
+      }
+    });
+  };
 })();

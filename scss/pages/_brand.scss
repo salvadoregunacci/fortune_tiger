@@ -6,6 +6,7 @@
     width: 14.375rem;
     height: 14.375rem;
     border-radius: var(--rounded-md);
+    animation: bigEntrance .8s ease-out forwards;
   }
 }
 
@@ -26,6 +27,7 @@
   font-size: 28px;
   font-weight: 700;
   line-height: normal;
+  animation: fadeFromTopFull .4s forwards;
 }
 
 .view__subtitle {
@@ -139,6 +141,8 @@
     top: 50%;
     left: 0;
     transform: translateY(-50%);
+    animation: fullWidth .4s ease-in forwards;
+    width: 0;
   }
 }
 
