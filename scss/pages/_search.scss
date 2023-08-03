@@ -1,0 +1,22 @@
+.search__item {
+  border-bottom: 1px solid #F1F3F5;
+  padding-top: var(--size-3);
+  padding-bottom: var(--size-3);
+}
+
+.search__item_title {
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: .0197rem;
+}
+
+.search__item_body {
+  line-height: 1.5rem;
+}
+
+.search__item_link {
+  color: var(--danger);
+  text-decoration: underline;
+  display: inline-block;
+  margin-top: var(--size-1);
+}

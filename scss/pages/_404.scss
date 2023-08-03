@@ -1,0 +1,30 @@
+#not_found {
+  min-height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  h1 {
+    font-size: 7rem;
+    font-weight: 600;
+  }
+}
+
+.not_found__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: var(--size-3);
+}
+
+.not_found__subtitle {
+  font-size: 21px;
+  font-weight: 500;
+  letter-spacing: .0197rem;
+}
+
+.not_found__desc {
+  font-weight: 500;
+  letter-spacing: .015rem;
+}
