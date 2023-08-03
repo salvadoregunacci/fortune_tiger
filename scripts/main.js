@@ -21,9 +21,20 @@
   const $cookie = document.querySelector('.cookies');
   const $closeCookieBtn = document.querySelector('.cookies__close_btn');
 
+  const $policyInputs = document.querySelectorAll('.form__policy_input');
+  const $formsSubmit = document.querySelectorAll('.form');
+
   // =========================
   // Events
   // =========================
+
+  $formsSubmit?.forEach(item => {
+    item.addEventListener("submit", onSubmitForm);
+  });
+
+  $policyInputs?.forEach(item => {
+    item.addEventListener("change", onChangePolicy);
+  });
 
   document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
@@ -54,7 +65,6 @@
     });
   });
 
-
   $burgerBtn?.addEventListener("click", () => {
     $burgerBtn.classList.toggle("active");
     // $navigation.toggleAttribute("active");
@@ -80,8 +90,6 @@
   });
 
   $closeSearchModal?.addEventListener("click", () => {
-    console.log("+++++");
-
     if ($searchModal) {
       $searchModal.classList.remove("active");
     }
@@ -103,9 +111,78 @@
 
   $toTopBtn?.addEventListener("click", scrollToTop);
 
+  window.addEventListener("scroll", onScrollPage);
+
   // =========================
   // Functions
   // =========================
+
+  function onSubmitForm(e) {
+    e.preventDefault();
+    const _curForm = e.target;
+
+    if (_curForm && _curForm.classList.contains("disabled")) {
+      const _errField = _curForm.querySelector(".form__error");
+      const _policy = _curForm.querySelector(".form__policy");
+
+      if (_errField && _policy) {
+        _errField.textContent = _policy.getAttribute("data-text-err") || "Ошибка валидации";
+        _errField.classList.add("active");
+
+        setTimeout(() => _errField.classList.remove("active"), 3000);
+      }
+
+      return;
+    }
+
+    _curForm && _curForm.submit();
+  }
+
+
+  function onChangePolicy(e) {
+    if (e.target && e.target.tagName === "INPUT") {
+      const _parentForm = e.target.closest(".form");
+
+      if (!_parentForm) return;
+
+      if (e.target.checked) {
+        _parentForm.classList.remove("disabled");
+      } else {
+        _parentForm.classList.add("disabled");
+      }
+    }
+  }
+
+
+  function onScrollPage(e) {
+    const _triggerHeight = getTenPercentOfPageHeight();
+    const _scrollY = getScrollTop();
+
+    if (!$toTopBtn) return;
+
+    if (_scrollY > _triggerHeight) {
+      $toTopBtn.classList.add("active");
+    } else {
+      $toTopBtn.classList.remove("active");
+    }
+  }
+
+
+  function getTenPercentOfPageHeight() {
+    const pageHeight = Math.max(
+      document.documentElement.clientHeight,
+      document.body.clientHeight
+    );
+
+    const tenPercent = 0.1 * pageHeight;
+    return tenPercent;
+  }
+
+
+  function getScrollTop() {
+    return window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+  }
+
 
   function scrollToTop() {
     if (!window) return;
@@ -116,6 +193,7 @@
     });
   }
 
+
   function pressEscapeKey() {
     if ($searchModal && $searchModal.classList.contains("active")) {
       $searchModal.classList.remove("active");
@@ -123,6 +201,12 @@
 
     if ($langsModal && $langsModal.classList.contains("active")) {
       closeLangsModal();
+    }
+
+    if ($dropdowns && $dropdowns.length) {
+      $dropdowns.forEach(item => {
+        item.classList.remove("active");
+      });
     }
   }
 
