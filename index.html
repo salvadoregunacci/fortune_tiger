@@ -52,18 +52,20 @@
 <body>
     <header id="header">
         <div class="container">
-            <button class="header__burger" aria-label="Открыть меню">
-                <span></span>
-            </button>
+            <div class="header__wrap">
+                <button class="header__burger" aria-label="Открыть меню">
+                    <span></span>
+                </button>
 
-            <a href="/" class="logo">
-                <img src="./img/logo.webp" alt="fortune tiger логотип">
-            </a>
+                <a href="/" class="logo">
+                    <img src="./img/logo.webp" alt="fortune tiger логотип">
+                </a>
+            </div>
 
             <div class="navigation__menu">
                 <nav class="navigation">
                     <ul class="navigation__wrap">
-                        <li>
+                        <li class="navigation__item">
                             <div class="dropdown">
                                 <button class="dropdown__header" aria-label="Развернуть список">
                                     <span class="dropdown__title">Казино</span>
@@ -83,13 +85,13 @@
                                 </ul>
                             </div>
                         </li>
-                        <li>
+                        <li class="navigation__item">
                             <a href="#">Бонусы</a>
                         </li>
-                        <li>
+                        <li class="navigation__item">
                             <a href="#">Игры</a>
                         </li>
-                        <li>
+                        <li class="navigation__item">
                             <div class="dropdown">
                                 <button class="dropdown__header" aria-label="Развернуть список">
                                     <span class="dropdown__title">Покер</span>
@@ -109,10 +111,10 @@
                                 </ul>
                             </div>
                         </li>
-                        <li>
+                        <li class="navigation__item">
                             <a href="#">Рулетка</a>
                         </li>
-                        <li>
+                        <li class="navigation__item">
                             <a href="#">Слоты</a>
                         </li>
                     </ul>
@@ -127,15 +129,22 @@
                         <span class="langs__trigger_flag">
                             <img src="./img/icons/langs/ru.svg" alt="russian">
                         </span>
-                        <span>ru</span>
+                        <span class="langs__trigger_shortname">ru</span>
+                        <span class="langs__trigger_fullname">Русский</span>
                         <img src="./img/icons/ui/chevron.svg" alt="шеврон иконка" class="langs__trigger_handler">
                     </button>
 
-                    <a href="#" class="btn btn_1" aria-label="Играть в Tiger Fortune">
-                        <span>Играть Tiger Fortune</span>
-                    </a>
+                    <form action="./search_results.html" class="search__trigger_mob">
+                        <input type="text" name="search" placeholder="Поиск">
+                        <button type="submit">
+                            <img src="./img/icons/ui/search.svg" alt="magnifer icon">
+                        </button>
+                    </form>
                 </div>
             </div>
+            <a href="#" class="btn btn_1 header__play_btn" aria-label="Играть в Tiger Fortune">
+                <span>Играть Tiger Fortune</span>
+            </a>
         </div>
     </header>
     <!-- ====================== -->

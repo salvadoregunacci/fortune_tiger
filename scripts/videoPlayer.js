@@ -57,7 +57,7 @@
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       allowfullscreen
-      style="max-width: 1280px; max-height: 720px; width: 100%; height: 100%;"
+      style="width: 100%; height: 100%;"
     >
     </iframe>
   `;

@@ -72,7 +72,7 @@ p {
       background: var(--light-100);
     }
 
-    tbody>tr>td:first-child {
+    tbody>tr>th:first-child {
       padding-left: var(--size-3);
       font-weight: 600;
     }
@@ -230,17 +230,30 @@ a {
   img {
     transition: .3s;
     cursor: zoom-in;
-    border-radius: var(--rounded-md)
   }
 }
 
 .full_modal__content.zoom {
-  max-width: 40vw;
-  max-height: 50vh;
+  max-width: 60vw;
+  max-height: 80vh;
+  height: 100%;
+  width: 100%;
+  background: rgb(53, 53, 53);
+  border-radius: var(--rounded-md);
+
+  img {
+    width: 100%;
+  }
 }
 
 .full_modal__box {
   transition: .3s;
+  max-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: var(--rounded-md);
 }
 
 .full_modal.active {
@@ -743,6 +756,10 @@ ol:not(.section_nav__list) {
   cursor: pointer;
   column-gap: 6px;
 
+  .langs__trigger_fullname {
+    display: none;
+  }
+
   span {
     text-transform: uppercase;
     font-size: 14px;
@@ -964,7 +981,7 @@ ol:not(.section_nav__list) {
   }
 
   img {
-    max-width: 132px;
+    min-width: 132px;
     width: 100%;
   }
 }
@@ -1141,6 +1158,12 @@ ol:not(.section_nav__list) {
   transition: .4s;
   z-index: 100;
 
+  iframe {
+    max-width: 60%;
+    max-height: 70%;
+    aspect-ratio: 16/9;
+  }
+
   &::after {
     content: "╳";
     font-size: 24px;
@@ -1273,11 +1296,13 @@ ol:not(.section_nav__list) {
     pointer-events: none;
 
     .lightbox__zoom_img {
-      max-width: 1200px;
-
       img {
         width: 100%;
         border-radius: 14px;
+        max-width: 80vw;
+        max-height: 80vh;
+        height: 100%;
+        width: 100%;
       }
     }
   }
@@ -1928,4 +1953,22 @@ a.btn {
   &::before {
     background: url("../img/icons/ui/checkbox_true.svg") center center / 100% no-repeat;
   }
+}
+
+.header__play_btn {
+  box-sizing: border-box;
+  display: inline-flex;
+  white-space: nowrap;
+  max-width: 220px;
+  width: 100%;
+  margin-left: var(--size-3);
+}
+
+.header__wrap {
+  display: flex;
+  align-items: center;
+}
+
+.search__trigger_mob {
+  display: none;
 }

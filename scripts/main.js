@@ -25,11 +25,41 @@
   const $formsSubmit = document.querySelectorAll('.form');
 
   let $titleSections = document.querySelectorAll('.title_section');
+  const $navigationMenu = document.querySelector('.navigation__menu');
 
+  // swipe touch
+  let startX;
+  let startY;
+  let threshold = 100;
 
   // =========================
   // Events
   // =========================
+
+  document.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+  });
+
+  document.addEventListener('touchmove', (e) => {
+    let currentX = e.touches[0].clientX;
+    let currentY = e.touches[0].clientY;
+    let diffX = startX - currentX;
+    let diffY = startY - currentY;
+
+    if (Math.abs(diffX) > Math.abs(diffY)) {
+      if (diffX > threshold && window.innerWidth <= 1250) {
+        _closeMenu();
+      } else if (diffX < -threshold) {
+        _openMenu();
+      }
+    }
+  });
+
+  document.addEventListener('touchend', (e) => {
+    startX = null;
+    startY = null;
+  });
 
   window.addEventListener('scroll', addVisibleClassTitle);
   window.addEventListener('load', addVisibleClassTitle);
@@ -73,7 +103,7 @@
 
   $burgerBtn?.addEventListener("click", () => {
     $burgerBtn.classList.toggle("active");
-    // $navigation.toggleAttribute("active");
+    $navigationMenu.classList.toggle("active");
   });
 
   $searchTriggers?.forEach(item => {
@@ -122,6 +152,22 @@
   // =========================
   // Functions
   // =========================
+
+  function _openMenu() {
+    if ($navigationMenu && $burgerBtn && !$burgerBtn.classList.contains("active")) {
+      $burgerBtn.classList.add("active");
+      $navigationMenu.classList.add("active");
+    }
+  }
+
+
+  function _closeMenu() {
+    if ($navigationMenu && $burgerBtn && $burgerBtn.classList.contains("active")) {
+      $burgerBtn.classList.remove("active");
+      $navigationMenu.classList.remove("active");
+    }
+  }
+
 
   function onSubmitForm(e) {
     e.preventDefault();
