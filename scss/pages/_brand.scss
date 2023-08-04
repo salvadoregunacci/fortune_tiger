@@ -146,6 +146,20 @@
   }
 }
 
+.progress_block__summary {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.summary__wrap {
+  display: flex;
+  align-items: center;
+  column-gap: var(--size-4);
+  width: 25%;
+  justify-content: space-between;
+}
+
 .summary__items {
   display: grid;
   grid-auto-flow: row;
