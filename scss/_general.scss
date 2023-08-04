@@ -44,14 +44,29 @@ p {
   border: 1px solid #F1F3F5;
   border-radius: var(--rounded-md);
 
+  &::-ms-scrollbar,
+  &::-moz-scrollbar,
+  &::-webkit-scrollbar {
+    background: transparent;
+    height: 5px;
+  }
+
+  &::-ms-scrollbar-thumb,
+  &::-moz-scrollbar-thumb,
+  &::-webkit-scrollbar-thumb {
+    background: #c9c9c9;
+    border-radius: 4px;
+  }
+
   table {
     width: 100%;
+    min-width: 980px;
     border-collapse: collapse;
 
     th,
     td {
       width: 20%;
-      padding: 16px 0px;
+      padding: 16px 10px;
       text-align: left;
     }
 
@@ -121,11 +136,13 @@ p {
   align-items: center;
   margin-top: 2.25rem;
   margin-bottom: 2.25rem;
+  box-sizing: border-box;
 
   p {
     font-size: 13px;
     font-style: italic;
     line-height: normal;
+    text-align: center;
 
     a {
       color: var(--danger);
@@ -146,6 +163,7 @@ p {
 
   .btn {
     width: 230px;
+    box-sizing: border-box;
   }
 }
 
@@ -163,8 +181,8 @@ p {
 
   li::before {
     content: "";
-    width: 8px;
-    height: 8px;
+    min-width: 8px;
+    min-height: 8px;
     display: inline-block;
     background: var(--dark);
     border-radius: 100%;
@@ -191,12 +209,21 @@ a {
 }
 
 .screenbox {
-  margin-top: var(--size-3);
-  text-align: center;
   width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 0;
+  padding: 0;
+  margin-top: var(--size-3);
+
 
   picture {
     cursor: zoom-in;
+    display: flex;
+    justify-content: center;
+    text-align: center;
     width: 100%;
   }
 
@@ -224,18 +251,20 @@ a {
   justify-content: center;
   height: 100%;
   width: 100%;
-  max-width: 80%;
+  max-width: 90%;
   overflow: hidden;
+  aspect-ratio: 16/9;
 
   img {
     transition: .3s;
     cursor: zoom-in;
+    width: 100%;
   }
 }
 
 .full_modal__content.zoom {
   max-width: 60vw;
-  max-height: 80vh;
+  max-height: 60vh;
   height: 100%;
   width: 100%;
   background: rgb(53, 53, 53);
@@ -254,6 +283,11 @@ a {
   justify-content: center;
   overflow: hidden;
   border-radius: var(--rounded-md);
+  aspect-ratio: 16/9;
+
+  img {
+    width: 100%;
+  }
 }
 
 .full_modal.active {
@@ -1396,11 +1430,12 @@ input[type="search"]::-webkit-search-results-decoration {
   color: var(--dark-100);
   font-weight: 600;
   letter-spacing: -0.08px;
+  text-align: left;
 }
 
 .faq__item_handler {
-  width: 32px;
-  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
   background: var(--light-200);
   border-radius: 100%;
   position: relative;
@@ -1512,6 +1547,20 @@ input[type="search"]::-webkit-search-results-decoration {
   background: var(--dark-100);
   padding: 2.5rem 0;
   color: var(--light);
+}
+
+.footer__row {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  max-width: 60%;
+}
+
+.footer__controls_col_wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 1.875rem;
 }
 
 .footer__wrap {

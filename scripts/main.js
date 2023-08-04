@@ -47,6 +47,10 @@
     let diffX = startX - currentX;
     let diffY = startY - currentY;
 
+    const isTableTouch = e.target.closest("table");
+
+    if (isTableTouch) return;
+
     if (Math.abs(diffX) > Math.abs(diffY)) {
       if (diffX > threshold && window.innerWidth <= 1250) {
         _closeMenu();

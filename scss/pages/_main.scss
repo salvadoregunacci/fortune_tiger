@@ -146,19 +146,24 @@
 }
 
 .info_col__benefit {
+  flex-wrap: nowrap;
+  font-size: 14px;
+  font-weight: 400;
+  display: inline-block;
 
-  img {
+  &::before {
+    content: "";
     display: inline-block;
     width: 14px;
     height: 14px;
+    background: url("../img/icons/ui/check_stroke.svg") center center / 100% no-repeat;
+    margin-right: 6px;
+    transform: translateY(2px);
   }
+}
 
-  span {
-    font-size: 14px;
-    font-weight: 400;
-    display: inline-block;
-    margin-left: var(--size-1);
-  }
+.info_col__benefit.minus::before {
+  background: url("../img/icons/ui/close_red.svg") center center / 80% no-repeat;
 }
 
 .info_col__benefit:not(:last-child) {
