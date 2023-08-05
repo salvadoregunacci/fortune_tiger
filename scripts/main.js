@@ -36,6 +36,18 @@
   // Events
   // =========================
 
+  window && window.addEventListener("click", (e) => {
+    const _isDropmenu = e.target && e.target.closest(".dropdown");
+
+    if (_isDropmenu) {
+      return;
+    }
+
+    $dropdowns?.forEach(el => {
+      el.classList.remove("active");
+    });
+  });
+
   document.addEventListener('touchstart', (e) => {
     startX = e.touches[0].clientX;
     startY = e.touches[0].clientY;
