@@ -933,6 +933,7 @@ ol:not(.section_nav__list) {
   .navigation__wrap {
     list-style: none;
     display: flex;
+    align-items: center;
     column-gap: 32px;
   }
 
